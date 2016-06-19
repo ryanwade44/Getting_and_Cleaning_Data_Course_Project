@@ -34,7 +34,7 @@ activity.subject.test <- inner_join(activity.subject.test, activity.labels, by="
 activity.subject.train <- inner_join(activity.info.train, subject.train, by="row.id")
 activity.subject.train <- inner_join(activity.subject.train, activity.labels, by="activity.id")
 
-#
+#Creates a data frame with attributes about the variables that we want to keep
 read.me.root.name <- c("tBodyAcc-XYZ","tGravityAcc-XYZ","tBodyAccJerk-XYZ","tBodyGyro-XYZ","tBodyGyroJerk-XYZ","tBodyAccMag","tGravityAccMag","tBodyAccJerkMag","tBodyGyroMag","tBodyGyroJerkMag","fBodyAcc-XYZ","fBodyAccJerk-XYZ","fBodyGyro-XYZ","fBodyAccMag","fBodyAccJerkMag","fBodyGyroMag","fBodyGyroJerkMag")
 feature.root.name <- c("tBodyAcc","tGravityAcc","tBodyAccJerk","tBodyGyro","tBodyGyroJerk","tBodyAccMag","tGravityAccMag","tBodyAccJerkMag","tBodyGyroMag","tBodyGyroJerkMag","fBodyAcc","fBodyAccJerk","fBodyGyro","fBodyAccMag","fBodyBodyAccJerkMag","fBodyBodyGyroMag","fBodyBodyGyroJerkMag")
 full.variable.name <- c("body acceleration signal","gravity acceleration signal","body acceleration jerk signal","body angular velocity","angular velocity jerk signal","body acceleration magnitude","gravity acceleration magnitude","body acceleration jerk magnitude","body angular velocity magnitude","body angular velocity jerk magnitude","body acceleration frequency domain signals","body acceleration jerk frequency domain signals","body angular velocity frequency domain signals","body accelaration magnitude frequency domain signals","body acceleration jerk magnitude frequency domain signals","body angular velocity magnitude frequency domain signals","body angular velocity jerk magnitude frequency domain signals")
@@ -143,6 +143,9 @@ activity.subject.average <-
         `avg body acceleration signal mean Y` = mean(`body acceleration signal mean Y`),
         `avg body acceleration signal mean X` = mean(`body acceleration signal mean X`)
     )
+
+#Writes data frame requested in step 5
+write.csv(x = activity.subject.average, file = "activity_subject_average.txt", row.names = FALSE)
 
 #Remove unneeded data frames
 data.frames.to.remove <- c("read.me.root.name","feature.root.name","full.variable.name","activity.info.test","activity.info.train","activity.labels","activity.subject.test","activity.subject.train","feature_names","features","features.std.means","root.path","subject.test","subject.train","test.set","train.set")
