@@ -1,10 +1,8 @@
 library(dplyr); library(tidyr); library(stringr)
 
-#*******************************************************************************
-#*******************************************************************************
-#*******************************************************************************
-root.path = "C:/Users/Ryan/OneDrive - Diesel Analytics/zJunk/Dataset"
-setwd(root.path)
+# Use the code below if you need to change the working directory
+#root.path = "<your working directory>"
+#setwd(root.path)
 
 #Activity Label data
 activity.labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
