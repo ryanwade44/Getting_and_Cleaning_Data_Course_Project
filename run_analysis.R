@@ -145,7 +145,7 @@ activity.subject.average <-
     )
 
 #Writes data frame requested in step 5
-write.csv(x = activity.subject.average, file = "activity_subject_average.txt", row.names = FALSE)
+write.table(x = activity.subject.average, file = "activity_subject_average.txt", row.names = FALSE)
 
 #Remove unneeded data frames
 data.frames.to.remove <- c("read.me.root.name","feature.root.name","full.variable.name","activity.info.test","activity.info.train","activity.labels","activity.subject.test","activity.subject.train","feature_names","features","features.std.means","root.path","subject.test","subject.train","test.set","train.set")
